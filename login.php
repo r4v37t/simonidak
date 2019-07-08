@@ -15,6 +15,8 @@ if(isset($_POST['masuk'])){
 		$_SESSION['last']=date('d-m-Y H:i:s',strtotime($h['last_login']));
 		$_SESSION['now']=date('Y-m-d H:i:s');
 		
+		$q=mysqli_query($mycon,"update simoni_user set last_login='$_SESSION[now]' where userid='$userid'");
+		
 		?>
 		<script>alert('LOGIN SUKSES!');</script>
 		<?php

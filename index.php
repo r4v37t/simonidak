@@ -13,6 +13,11 @@
         echo "Debugging error: " . mysqli_connect_error() . "<br />";
         exit;
     }
+	
+	if(isset($_GET['logout'])){
+		session_destroy();
+		?><script>alert('LOGOUT SUKSES!'); location.href='./';</script><?php
+	}
 
     if(!isset($_SESSION['login'])){
         include 'login.php';

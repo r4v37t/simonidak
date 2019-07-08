@@ -8,6 +8,18 @@ var Index = function() {
 
     return {
         init: function() {
+			
+			App.datatables();
+
+            /* Initialize Datatables */
+            $('#dtable').dataTable({
+                pageLength: 10,
+                lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'All']]
+            });
+
+            /* Add placeholder attribute to the search input */
+            $('.dataTables_filter input').attr('placeholder', 'Search');
+			
             /* Mini Bar Charts with jquery.sparkline plugin, for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about */
             var miniChartBarOptions = {
                 type: 'bar',
