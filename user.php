@@ -6,7 +6,7 @@ if(isset($_POST['tambah'])){
 	$userid=$_POST['userid'];
 	$userpwd=md5($_POST['userpwd']);
 	$level=$_POST['level'];
-	$q=mysqli_query($mycon,"insert into simoni_user values('$userid','$userpwd','$nama','$nip','$email','$level','now()')");
+	$q=mysqli_query($mycon,"insert into simoni_user values('$userid','$userpwd','$nama','$nip','$email','$level',now())");
 	if($q){
 		?><script>alert('SUKSES!\n\nData berhasil ditambahkan.');</script><?php
 	}else{

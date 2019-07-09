@@ -81,8 +81,22 @@
                                 <li>
                                     <a href="?menu=user" class="<?php echo (isset($_GET['menu']))?(($_GET['menu']=='user')?'active':''):''; ?>"><i class="gi gi-group sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Kelola User</span></a>
                                 </li>
-                                <li>
-                                    <a href="page_widgets_social.html"><i class="gi gi-share_alt sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Social</span></a>
+								<li class="<?php echo (isset($_GET['menu']))?(($_GET['menu']=='paket'||$_GET['menu']=='ppk'||$_GET['menu']=='pptk'||$_GET['menu']=='tfl')?'active':''):''; ?>">
+                                    <a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="gi gi-bullhorn sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Paket Pekerjaan</span></a>
+                                    <ul>
+                                        <li>
+                                            <a href="?menu=paket" class="<?php echo (isset($_GET['menu']))?(($_GET['menu']=='paket')?'active':''):''; ?>">Daftar Paket</a>
+                                        </li>
+										<li>
+                                            <a href="?menu=ppk" class="<?php echo (isset($_GET['menu']))?(($_GET['menu']=='ppk')?'active':''):''; ?>">Daftar PPK</a>
+                                        </li>
+										<li>
+                                            <a href="?menu=pptk" class="<?php echo (isset($_GET['menu']))?(($_GET['menu']=='pptk')?'active':''):''; ?>">Daftar PPTK</a>
+                                        </li>
+										<li>
+                                            <a href="?menu=tfl" class="<?php echo (isset($_GET['menu']))?(($_GET['menu']=='tfl')?'active':''):''; ?>">Daftar TFL</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="page_widgets_media.html"><i class="gi gi-film sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Media</span></a>
@@ -486,6 +500,14 @@
 					if($menu=='dashboard'){
 						include "$menu.php";
 					}else if($menu=='user'){
+						include "$menu.php";
+					}else if($menu=='paket'){
+						include "$menu.php";
+					}else if($menu=='ppk'){
+						include "$menu.php";
+					}else if($menu=='pptk'){
+						include "$menu.php";
+					}else if($menu=='tfl'){
 						include "$menu.php";
 					}else{
 						include 'dashboard.php';

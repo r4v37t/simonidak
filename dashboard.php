@@ -18,6 +18,11 @@
 
 		<!-- Mini Top Stats Row -->
 		<div class="row">
+			<?php
+			$q=mysqli_query($mycon,"select sum(pagu) from simoni_paket where tahun=year(now())");
+			$h=mysqli_fetch_array($q);
+			$totalPagu=$h[0];
+			?>
 			<div class="col-sm-6 col-lg-3">
 				<!-- Widget -->
 				<a href="page_ready_article.html" class="widget widget-hover-effect1">
@@ -26,13 +31,17 @@
 							<i class="gi gi-usd"></i>
 						</div>
 						<h3 class="widget-content text-right animation-pullDown">
-							<strong>Rp. 0</strong><br>
+							<strong>Rp. <?php echo number_format($totalPagu,2,',','.'); ?></strong><br>
 							<small>Total Pagu</small>
 						</h3>
 					</div>
 				</a>
 				<!-- END Widget -->
 			</div>
+			<?php
+			$q=mysqli_query($mycon,"select * from simoni_paket where tahun=year(now())");
+			$totalPaket=mysqli_num_rows($q);
+			?>
 			<div class="col-sm-6 col-lg-3">
 				<!-- Widget -->
 				<a href="page_comp_charts.html" class="widget widget-hover-effect1">
@@ -41,7 +50,7 @@
 							<i class="gi gi-bullhorn"></i>
 						</div>
 						<h3 class="widget-content text-right animation-pullDown">
-							<strong>0 Paket</strong><br>
+							<strong><?php echo $totalPaket; ?> Paket</strong><br>
 							<small>Total Pekerjaan</small>
 						</h3>
 					</div>
